@@ -25,6 +25,11 @@ $(document).ready(function(){
              strictEqual(Cereal.parse(Cereal.stringify(true)), true, "Simple bool");
          });
 
+    test("Encoding/Decode Dates",
+         function() {
+             deepEqual(Cereal.parse(Cereal.stringify(new Date(1341258802821))), new Date(1341258802821), "Date object");
+         });
+
     test("Encoding/Decoding DAGs",
          function() {
              deepEqual(Cereal.parse(Cereal.stringify({})), {},
